@@ -45,4 +45,4 @@ class Amoozeshgah(models.Model):
     name = models.CharField(max_length=250,verbose_name="نام آموزشگاه")
     category = models.ManyToManyField(Category,verbose_name="دسته بندی آموزش های آموزشگاه")
     geom = gismodels.PointField()
-    objects = gismodels.GeoManager()
+#    objects = gismodels.GeoManager()

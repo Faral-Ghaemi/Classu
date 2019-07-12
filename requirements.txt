@@ -6,4 +6,5 @@ gunicorn
 psycopg2
 pytz
 whitenoise
-setuptools
+setuptools 
+django-leaflet
