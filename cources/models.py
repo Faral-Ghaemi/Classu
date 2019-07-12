@@ -1,4 +1,5 @@
-from django.contrib.gis.db import models
+from django.db import models
+from django.contrib.gis.db import models as gismodels
 from django.utils.text import slugify
 from django.contrib.auth.models import User
 from datetime import date
@@ -43,5 +44,5 @@ class Cource(models.Model):
 class Amoozeshgah(models.Model):
     name = models.CharField(max_length=250,verbose_name="نام آموزشگاه")
     category = models.ManyToManyField(Category,verbose_name="دسته بندی آموزش های آموزشگاه")
-    mpoint = models.PointField()
-    objects = models.GeoManager()
+    geom = gismodels.PointField()
+    objects = gismodels.GeoManager()
