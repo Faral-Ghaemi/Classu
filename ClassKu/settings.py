@@ -10,7 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/2.2/ref/settings/
 """
 
-import os,whitenoise
+import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 
@@ -26,7 +26,7 @@ SECRET_KEY = '+&g*oo#pf4d2x*r4$db4h10=!jje_#(-$2!vfd*ig5l(np2a%i'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["herokudjangoapp.herokuapp.com",]
+ALLOWED_HOSTS = ["localhost","herokudjangoapp.herokuapp.com",]
 
 
 # Application definition
@@ -44,7 +44,7 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
-    'whitenoise.middleware.WhiteNoiseMiddleware',
+
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -52,7 +52,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'django.contrib.gis.db',
+
 ]
 
 ROOT_URLCONF = 'ClassKu.urls'
