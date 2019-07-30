@@ -38,13 +38,12 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'django.contrib.gis',
+    # 'django.contrib.gis',
     'cources',
 
 ]
 
 MIDDLEWARE = [
-    'gdal'
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -81,12 +80,14 @@ WSGI_APPLICATION = 'ClassKu.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.contrib.gis.db.backends.postgis',
+        'NAME': 'class',
+        'USER': 'postgres',
+        'PASSWORD': 'amin4545',
+        'HOST': 'localhost',
+        'PORT': '5432',
     }
 }
-
-
 # Password validation
 # https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators
 
@@ -136,6 +137,6 @@ STATICFILES_DIRS = [
 
 STATIC_ROOT = os.path.join(PROJECT_DIR, 'collect_static')
 STATIC_URL = '/static/'
-
+GDAL_LIBRARY_PATH = os.path.join(PROJECT_DIR, 'gdalwin32-1.6')
 MEDIA_ROOT = os.path.join(PROJECT_DIR, 'media')
 MEDIA_URL = '/media/'
